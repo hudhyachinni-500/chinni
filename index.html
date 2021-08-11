@@ -5,21 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PUSH</title>
-<script>
-    ((p,u,s,h)=>{
-         p._push={"apiKey":'3098062955463272'};
-         p._pushfcm = {
-           location:'dev'
-         };
-          let l,y;
-          l = u.getElementsByTagName('head')[0];
-          y = u.createElement('script');
-          y.async = 1;
-          y.id="pushninja_script"
-          y.src = s+h;
-          l.appendChild(y);})(window,document,'','https://hudhyachinni-500.github.io/push.min.js');
-  </script>
-<!-- 	  <script>
+    <script>
+      ((p, u, s, h) => {
+        p._push = { apiKey: "3098062955463272" };
+        p._pushfcm = {
+          location: "dev",
+        };
+        p._pushGlobal.getCustomfieldsData("hello");
+        let l, y;
+        l = u.getElementsByTagName("head")[0];
+        y = u.createElement("script");
+        y.async = 1;
+        y.id = "pushninja_script";
+        y.src = s + h;
+        l.appendChild(y);
+      })(
+        window,
+        document,
+        "",
+        "https://hudhyachinni-500.github.io/push.min.js"
+      );
+    </script>
+    <!-- 	  <script>
 	((p,u,s,h,l,y)=>{
        p._push={"apiKey":'5084194326323535'};
 	   p._pushfcm = {
@@ -32,12 +39,10 @@
 	      y.src = s+h;
           l.appendChild(y);})(window,document,'https://infinity-public-js.500apps.com/push/','push.min.js');
 </script> -->
-	  
- 
   </head>
 
   <body>
-<!-- 	  <script>
+    <!-- 	  <script>
       (function (s, i, t, e, r, p) {
         p = i.getElementsByTagName("head")[0];
         r = i.createElement("script");
@@ -49,7 +54,7 @@
         p.appendChild(r);
       })(window, document, "https://infinity-public-js.500apps.com/dev/v0.0.69/siterecording/", "siterecorder.min.js");
     </script> -->
-     <canvas></canvas>
+    <canvas></canvas>
     <!-- 
         o
          \_/\o
@@ -186,7 +191,9 @@
             this.light = light;
             // ---- create points ----
             for (const p of struct.points) {
-              this.points.push(new Robot.Point(size * p.x + x, size * p.y + y, p.f));
+              this.points.push(
+                new Robot.Point(size * p.x + x, size * p.y + y, p.f)
+              );
             }
             // ---- create links ----
             for (const link of struct.links) {
@@ -194,14 +201,38 @@
               const p1 = this.points[link.p1];
               const dx = p0.x - p1.x;
               const dy = p0.y - p1.y;
-              this.links.push(new Robot.Link(this, p0, p1, Math.sqrt(dx * dx + dy * dy), (link.size * size) / 3, link.lum, link.force, link.disk));
+              this.links.push(
+                new Robot.Link(
+                  this,
+                  p0,
+                  p1,
+                  Math.sqrt(dx * dx + dy * dy),
+                  (link.size * size) / 3,
+                  link.lum,
+                  link.force,
+                  link.disk
+                )
+              );
             }
           }
           update() {
             if (++this.frame % Math.round(20 / ts) === 0) this.dir = -this.dir;
-            if (this === pointer.dancerDrag && this.size < 16 && this.frame > 600) {
+            if (
+              this === pointer.dancerDrag &&
+              this.size < 16 &&
+              this.frame > 600
+            ) {
               pointer.dancerDrag = null;
-              dancers.push(new Robot(this.color + 90, this.light * 1.25, this.size * 2, pointer.x, pointer.y - 100 * this.size * 2, struct));
+              dancers.push(
+                new Robot(
+                  this.color + 90,
+                  this.light * 1.25,
+                  this.size * 2,
+                  pointer.x,
+                  pointer.y - 100 * this.size * 2,
+                  struct
+                )
+              );
               dancers.sort(function (d0, d1) {
                 return d0.size - d1.size;
               });
@@ -231,7 +262,10 @@
                 const a = Math.atan2(dy, dx);
                 // ---- shadow ----
                 ctx.save();
-                ctx.translate(link.p0.x + link.size * 0.25, link.p0.y + link.size * 0.25);
+                ctx.translate(
+                  link.p0.x + link.size * 0.25,
+                  link.p0.y + link.size * 0.25
+                );
                 ctx.rotate(a);
                 ctx.drawImage(link.shadow, -link.size * 0.5, -link.size * 0.5);
                 ctx.restore();
@@ -253,8 +287,24 @@
             this.size = size;
             this.light = light || 1.0;
             this.force = force || 0.5;
-            this.image = this.stroke("hsl(" + parent.color + " ,30%, " + parent.light * this.light + "%)", true, disk, dist, size);
-            this.shadow = this.stroke("rgba(0,0,0,0.5)", false, disk, dist, size);
+            this.image = this.stroke(
+              "hsl(" +
+                parent.color +
+                " ,30%, " +
+                parent.light * this.light +
+                "%)",
+              true,
+              disk,
+              dist,
+              size
+            );
+            this.shadow = this.stroke(
+              "rgba(0,0,0,0.5)",
+              false,
+              disk,
+              dist,
+              size
+            );
           }
           update() {
             const p0 = this.p0;
@@ -290,7 +340,13 @@
             ict.lineWidth = size;
             ict.strokeStyle = color;
             if (disk) {
-              ict.arc(size * 0.5 + dist, size * 0.5, size * 0.5, 0, 2 * Math.PI);
+              ict.arc(
+                size * 0.5 + dist,
+                size * 0.5,
+                size * 0.5,
+                0,
+                2 * Math.PI
+              );
               ict.fillStyle = color;
               ict.fill();
             } else {
@@ -413,7 +469,12 @@
           ctx.clearRect(0, 0, canvas.width, canvas.height);
           ctx.fillStyle = "#222";
           ctx.fillRect(0, 0, canvas.width, canvas.height * 0.15);
-          ctx.fillRect(0, canvas.height * 0.85, canvas.width, canvas.height * 0.15);
+          ctx.fillRect(
+            0,
+            canvas.height * 0.85,
+            canvas.width,
+            canvas.height * 0.15
+          );
           // ---- animate robots ----
           for (const dancer of dancers) {
             dancer.update();
@@ -424,7 +485,16 @@
           // ---- instanciate robots ----
           ground = canvas.height > 500 ? 0.85 : 1.0;
           for (let i = 0; i < 6; i++) {
-            dancers.push(new Robot((i * 360) / 7, 80, Math.sqrt(Math.min(canvas.width, canvas.height)) / 6, ((i + 2) * canvas.width) / 9, canvas.height * 0.5 - 100, struct));
+            dancers.push(
+              new Robot(
+                (i * 360) / 7,
+                80,
+                Math.sqrt(Math.min(canvas.width, canvas.height)) / 6,
+                ((i + 2) * canvas.width) / 9,
+                canvas.height * 0.5 - 100,
+                struct
+              )
+            );
           }
         };
         // ---- main thread vs. worker
@@ -473,7 +543,7 @@
             height: canvas.offsetHeight,
           });
         },
-        false,
+        false
       );
       // ---- pointer events ----
       const pointer = {
