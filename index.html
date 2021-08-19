@@ -71,17 +71,17 @@
         -->
     <form>
       <label><b>Enter a name</b></label>
-      <input type="text" name="first_name" id="first_name" />
+      <input type="text" name="first_name" id="FirstName" />
       <label><b>Enter a email</b></label>
-      <input type="email" name="email" id="email" />
+      <input type="email" name="email" id="Contact" />
     </form>
 
     <input type="submit" onclick="showInput();" /><br />
     <script>
       function showInput() {
         let obj={};
-        obj.first_name= document.getElementById("first_name").value;
-        obj.email=  document.getElementById("email").value;
+        obj.FirstName= document.getElementById("FirstName").value;
+        obj.Contact=  document.getElementById("Contact").value;
         window.storeResponse(obj);
       console.log("obj.. 123",obj);
       }
