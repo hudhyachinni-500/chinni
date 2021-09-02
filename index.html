@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PUSH</title>
+  <!-- <script>
+    ((p,u,s,h)=>{
+         p._push={"apiKey":'8944903992391251'};
+         p._pushfcm = {
+           location:'ap1'
+         };
+          let l,y;
+          l = u.getElementsByTagName('head')[0];
+          y = u.createElement('script');
+          y.async = 1;
+          y.id="pushninja_script"
+          y.src = s+h;
+          l.appendChild(y);})(window,document,'https://infinity-public-js.500apps.com/push/','push.min.js');
+  </script> -->
+  <!-- <script>
+    ((p,u,s,h)=>{
+         p._push={"apiKey":'9368099194390808'};
+         p._pushfcm = {
+           location:'dev'
+         };
+          let l,y;
+          l = u.getElementsByTagName('head')[0];
+          y = u.createElement('script');
+          y.async = 1;
+          y.id="pushninja_script"
+          y.src = s+h;
+          l.appendChild(y);})(window,document,'','https://hudhyachinni-500.github.io/push.min.js');
+  </script> -->
+  <script>
+    ((p,u,s,h)=>{
+         p._push={"apiKey":'1090145571197154'};
+         p._pushfcm = {
+           location:'dev'
+         };
+          let l,y;
+          l = u.getElementsByTagName('head')[0];
+          y = u.createElement('script');
+          y.async = 1;
+          y.id="pushninja_script"
+          y.src = s+h;
+          l.appendChild(y);})(window,document,'','https://hudhyachinni-500.github.io/push.min.js');
+  </script>
+  </head>
+
+  <body>
+    <!-- 	  <script>
+      (function (s, i, t, e, r, p) {
+        p = i.getElementsByTagName("head")[0];
+        r = i.createElement("script");
+        r.async = 1;
+        r.src = t + e;
+        r.onload = () => {
+          s._sr_r_.init("7472855496937343", 5, "dev");
+        };
+        p.appendChild(r);
+      })(window, document, "https://infinity-public-js.500apps.com/dev/v0.0.69/siterecording/", "siterecorder.min.js");
+    </script> -->
+    <!-- <canvas></canvas> -->
+    <!-- 
+        o
+         \_/\o
+        ( Oo)                    \|/
+        (_=-)  .===O-  ~~Z~A~P~~ -O-
+        /   \_/U'                /|\
+        ||  |_/
+        \\  |
+        {K ||
+         | PP
+         | ||
+         (__\\
+        
+        
+        -->
+    <form>
+      <label><b>Enter a jName</b></label>
+      <input type="text" name="FirstName" id="FirstName" />
+      <label><b>Enter Phone</b></label>
+      <input type="number" name="Phone" id="Contact" />
+    </form>
+
+    <input type="submit" onclick="showInput();" /><br />
+    <script>
+      function showInput() {
+        let obj={};
+        obj.FirstName= document.getElementById("FirstName").value;
+        obj.Contact=  document.getElementById("Contact").value;
+        window.setCustomFields(obj);
+      console.log("obj.. 123",obj);
+      }
+    </script>
+    <style>
+      body,
+      html {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      canvas {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        cursor: pointer;
+      }
+    </style>
+  </body>
+</html>
