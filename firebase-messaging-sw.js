@@ -1,5 +1,5 @@
  //importScripts("http://127.0.0.1:8887/push/listener.min.js");
-if ("undefined" === typeof window) {
+ if ("undefined" === typeof window) {
   importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js");
   importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js");
 }
