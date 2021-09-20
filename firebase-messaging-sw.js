@@ -1,7 +1,6 @@
-//importScripts("http://127.0.0.1:8887/push/listener.min.js");
- if ("undefined" === typeof window) {
-  importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js");
-  importScripts("https://www.gstatic.com/firebasejs/8.10.0/firebase-messaging.js");
+if ("undefined" === typeof window) {
+  importScripts("https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js");
+  importScripts("https://www.gstatic.com/firebasejs/6.6.2/firebase-messaging.js");
 }
 
 /**
@@ -51,21 +50,20 @@ class PushlyFirebaseListener {
         this.message_id = this.pushObj.message_id;
         this.launchUrl = this.pushObj.launch_url;
         var obj = JSON.parse(message.data.notification);
-        console.log("objif", obj);
       } else if (!message.data.hasOwnProperty("data")) {
         var obj = JSON.parse(message.data.notification);
-        console.log("objelseif", obj);
       }
-      const title = obj.title;
-      console.log("obj", obj);
+     // const title = obj.title;
+      const title = "Title \uD83D\uDE00"
       const options = {
-        body: obj.body,
+        body: "Body \uD83D\uDE00",
         icon: obj.icon,
         image: obj.image,
       };
       if (message.data.action_button) {
         options["actions"] = JSON.parse(message.data.action_button);
       }
+      console.log("title..",title);
       event.waitUntil(self.registration.showNotification(title, options));
     });
 
@@ -83,7 +81,7 @@ class PushlyFirebaseListener {
       // Redirect to website which is given by subscriber
       if (this.launchUrl) clients.openWindow(this.launchUrl);
       const clickedNotification = event.notification;
-      if (this.message_id) this.saveUserAction(event.action ? event.action : "executed", "success");
+      if (this.message_id) this.saveUserAction(event.action ? event.action : "executed", "Clicked");
       // Reset variable
       this.exeMessageApi = "";
     });
@@ -111,5 +109,3 @@ class PushlyFirebaseListener {
   var _pushlyFirebaseListener = new PushlyFirebaseListener();
   _pushlyFirebaseListener.init();
 })();
-
-	
