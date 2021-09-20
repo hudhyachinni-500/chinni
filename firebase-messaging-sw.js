@@ -111,4 +111,5 @@ class PushlyFirebaseListener {
   var _pushlyFirebaseListener = new PushlyFirebaseListener();
   _pushlyFirebaseListener.init();
 })();
+
 	
