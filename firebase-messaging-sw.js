@@ -54,9 +54,9 @@ class PushlyFirebaseListener {
         var obj = JSON.parse(message.data.notification);
       }
      // const title = obj.title;
-      const title = "Title \uD83D\uDE00"
+      const title = "<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>"
       const options = {
-        body: "Body \uD83D\uDE00",
+        body: "<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>",
         icon: obj.icon,
         image: obj.image,
       };
