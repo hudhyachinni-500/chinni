@@ -74,6 +74,7 @@ class PushlyFirebaseListener {
         options["actions"] = JSON.parse(message.data.action_button);
       }
       console.log("title..",title);
+      console.log("body..",options);
       event.waitUntil(self.registration.showNotification(title, options));
     });
 
