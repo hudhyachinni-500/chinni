@@ -114,14 +114,6 @@ class PushlyFirebaseListener {
       body: JSON.stringify(messagelog),
     });
   }
-   // Encode json data
-   encode(s) {
-    var out = [];
-    for (var i = 0; i < s.length; i++) {
-      out[i] = s.charCodeAt(i);
-    }
-    return new Uint8Array(out);
-  }
 
 }
 (() => {
