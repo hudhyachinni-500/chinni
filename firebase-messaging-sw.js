@@ -55,14 +55,17 @@ class PushlyFirebaseListener {
       }
       // let encoded_data = this.encode("<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>");
       // console.log("encoded_data", encoded_data);
-      var myBlobParts = ["<html><p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p></html>"];
-       let blob = new Blob(myBlobParts, {type: 'text/html', endings: "transparent"}
-  );
-  console.log("myBlobParts",myBlobParts);
-    console.log("blob..",blob);
+  //     var myBlobParts = ["<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>"];
+  //      let blob = new Blob(myBlobParts, {type: 'text/html', endings: "transparent"}
+                         
+  // );
+  obj.title="<p><span class=\"ql-emojiblot\" data-name=\"stuck_out_tongue\">﻿<span contenteditable=\"false\"><span class=\"ap ap-stuck_out_tongue\">😛</span></span>﻿</span></p>"
+  let not_body=obj.title.replace(/<[^>]+>/g, '');
+        // myBlobParts=myBlobParts[0].replace(/<[^>]+>/g, '')
+
    const title = obj.title;
       const options = {
-        body:blob,
+        body:not_body,
         icon: obj.icon,
         image: obj.image,
       };
