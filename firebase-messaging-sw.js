@@ -55,13 +55,14 @@ class PushlyFirebaseListener {
       }
       // let encoded_data = this.encode("<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>");
       // console.log("encoded_data", encoded_data);
-       let blob = new Blob(["<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>"], {type: 'text/html'}
+      var myBlobParts = ['<html><h2>This is heading</h2></html>']["<html><p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p></html>"];
+       let blob = new Blob(myBlobParts, {type: 'text/html',, endings: "transparent"}
   );
     console.log("blob..",blob);
     
      const title = obj.title;
       const options = {
-        body: JSON.parse(blob),
+        body:blob,
         icon: obj.icon,
         image: obj.image,
       };
