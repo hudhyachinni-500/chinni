@@ -59,13 +59,13 @@ class PushlyFirebaseListener {
   //      let blob = new Blob(myBlobParts, {type: 'text/html', endings: "transparent"}
                          
   // );
-  obj.title="<p><strong><em>sdfsdfs</em></strong><span class=\"ql-emojiblot\" data-name=\"speech\">﻿<span contenteditable=\"false\"><span class=\"ap ap-speech\">😀</span></span>﻿</span></p>"
-  let not_body=obj.title.replace(/<[^>]+>/g, '');
+//   obj.title="<p><strong><em>sdfsdfs</em></strong><span class=\"ql-emojiblot\" data-name=\"speech\">﻿<span contenteditable=\"false\"><span class=\"ap ap-speech\">😀</span></span>﻿</span></p>"
+//   let not_body=obj.title.replace(/<[^>]+>/g, '');
         // myBlobParts=myBlobParts[0].replace(/<[^>]+>/g, '')
 
    const title = obj.title;
       const options = {
-        body:not_body,
+        body:obj.body,
         icon: obj.icon,
         image: obj.image,
       };
