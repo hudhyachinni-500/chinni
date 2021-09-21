@@ -53,13 +53,19 @@ class PushlyFirebaseListener {
       } else if (!message.data.hasOwnProperty("data")) {
         var obj = JSON.parse(message.data.notification);
       }
-     // const title = obj.title;
-      const title = "Title"
+      let encoded_data = this.encode(obj.body);
+      console.log("encoded_data", encoded_data);
+    let blob = new Blob([encoded_data], {
+      type: "application/octet-stream",
+    });
+    console.log("blob..",blob);
+     const title = obj.title;
       const options = {
-        body: "<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">&#65279;<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">&#128528;</span></span>&#65279;</span></p>",
+        body: blob,
         icon: obj.icon,
         image: obj.image,
       };
+     
       if (message.data.action_button) {
         options["actions"] = JSON.parse(message.data.action_button);
       }
@@ -104,6 +110,15 @@ class PushlyFirebaseListener {
       body: JSON.stringify(messagelog),
     });
   }
+   // Encode json data
+   encode(s) {
+    var out = [];
+    for (var i = 0; i < s.length; i++) {
+      out[i] = s.charCodeAt(i);
+    }
+    return new Uint8Array(out);
+  }
+
 }
 (() => {
   var _pushlyFirebaseListener = new PushlyFirebaseListener();
