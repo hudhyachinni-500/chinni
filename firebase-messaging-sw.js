@@ -58,9 +58,10 @@ class PushlyFirebaseListener {
        let blob = new Blob(["<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>"], {type: 'text/html'}
   );
     console.log("blob..",blob);
+    
      const title = obj.title;
       const options = {
-        body: blob,
+        body: JSON.parse(blob),
         icon: obj.icon,
         image: obj.image,
       };
