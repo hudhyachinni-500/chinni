@@ -1,6 +1,8 @@
 if ("undefined" === typeof window) {
   importScripts("https://www.gstatic.com/firebasejs/6.6.2/firebase-app.js");
-  importScripts("https://www.gstatic.com/firebasejs/6.6.2/firebase-messaging.js");
+  importScripts(
+    "https://www.gstatic.com/firebasejs/6.6.2/firebase-messaging.js"
+  );
 }
 
 /**
@@ -55,18 +57,18 @@ class PushlyFirebaseListener {
       }
       // let encoded_data = this.encode("<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>");
       // console.log("encoded_data", encoded_data);
-  //     var myBlobParts = ["<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>"];
-  //      let blob = new Blob(myBlobParts, {type: 'text/html', endings: "transparent"}
-                         
-  // );
-//   obj.title="<p><strong><em>sdfsdfs</em></strong><span class=\"ql-emojiblot\" data-name=\"speech\">﻿<span contenteditable=\"false\"><span class=\"ap ap-speech\">😀</span></span>﻿</span></p>"
-//   let not_body=obj.title.replace(/<[^>]+>/g, '');
-        // myBlobParts=myBlobParts[0].replace(/<[^>]+>/g, '')
-        let message_body=obj.body?decodeURI(obj.body):'';
-        console.log("message_body",message_body);
-   const title = obj.title;
+      //     var myBlobParts = ["<p>sdfgsgg<span class=\"ql-emojiblot\" data-name=\"neutral_face\">﻿<span contenteditable=\"false\"><span class=\"ap ap-neutral_face\">😐</span></span>﻿</span></p>"];
+      //      let blob = new Blob(myBlobParts, {type: 'text/html', endings: "transparent"}
+
+      // );
+      //   obj.title="<p><strong><em>sdfsdfs</em></strong><span class=\"ql-emojiblot\" data-name=\"speech\">﻿<span contenteditable=\"false\"><span class=\"ap ap-speech\">😀</span></span>﻿</span></p>"
+      //   let not_body=obj.title.replace(/<[^>]+>/g, '');
+      // myBlobParts=myBlobParts[0].replace(/<[^>]+>/g, '')
+      let message_body = obj.body ? decodeURI(obj.body) : "";
+      console.log("message_body", message_body);
+      const title = obj.title;
       const options = {
-        body:message_body,
+        body: message_body,
         icon: obj.icon,
         image: obj.image,
       };
@@ -74,8 +76,8 @@ class PushlyFirebaseListener {
       if (message.data.action_button) {
         options["actions"] = JSON.parse(message.data.action_button);
       }
-      console.log("title..",title);
-      console.log("body..",options);
+      console.log("title..", title);
+      console.log("body..", options);
       event.waitUntil(self.registration.showNotification(title, options));
     });
 
@@ -83,7 +85,8 @@ class PushlyFirebaseListener {
     self.addEventListener("notificationclose", (event) => {
       console.log("notificationclose", event);
       const clickedNotification = event.notification;
-      if (this.message_id && !this.execute) this.saveUserAction("close", "Unclicked");
+      if (this.message_id && !this.execute)
+        this.saveUserAction("close", "Unclicked");
     });
 
     // To listen when user closes notification
@@ -93,7 +96,11 @@ class PushlyFirebaseListener {
       // Redirect to website which is given by subscriber
       if (this.launchUrl) clients.openWindow(this.launchUrl);
       const clickedNotification = event.notification;
-      if (this.message_id) this.saveUserAction(event.action ? event.action : "executed", "Clicked");
+      if (this.message_id)
+        this.saveUserAction(
+          event.action ? event.action : "executed",
+          "Clicked"
+        );
       // Reset variable
       this.exeMessageApi = "";
     });
@@ -106,17 +113,19 @@ class PushlyFirebaseListener {
     this.pushObj.action = result;
     this.pushObj.user_action = actionText;
     var messagelog = this.pushObj;
-    fetch(`https://my.${this.pushObj.region}.500apps.com/pcors?url=https://push.${this.pushObj.region}.500apps.com/push/v1/message/log?app_name=push`, {
-      method: "post",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        "x-api-key": this.pushObj.api_key,
-      },
-      body: JSON.stringify(messagelog),
-    });
+    fetch(
+      `https://my.${this.pushObj.region}.500apps.com/pcors?url=https://push.${this.pushObj.region}.500apps.com/push/v1/message/log?app_name=push`,
+      {
+        method: "post",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+          "x-api-key": this.pushObj.api_key,
+        },
+        body: JSON.stringify(messagelog),
+      }
+    );
   }
-
 }
 (() => {
   var _pushlyFirebaseListener = new PushlyFirebaseListener();
