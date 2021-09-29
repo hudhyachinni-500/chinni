@@ -220,7 +220,6 @@
             <div class="hire">
               <h2>You want us to do</h2>
               <!-- checkout formspree.io for easy form setup -->
-              <form class="work-request">
                 <div class="work-request--options">
                   <span class="options-a">
                     <input id="opt-1" type="checkbox" value="app design">
@@ -287,19 +286,29 @@
                     </label>
                   </span>
                 </div>
+                <form>
                 <div class="work-request--information">
                   <div class="information-name">
-                    <input id="name" type="text" spellcheck="false">
-                    <label for="name">Name</label>
+                    <input id="FirstName" type="text" spellcheck="false">
+                    <label for="name">First Name</label>
                   </div>
                   <div class="information-email">
-                    <input id="email" type="email" spellcheck="false">
-                    <label for="email">Email</label>
+                    <input id="Contact" type="email" spellcheck="false">
+                    <label for="email">Contact</label>
                   </div>
                 </div>
-                <input type="submit" value="Send Request">
               </form>
-            </div>
+                <input type="submit" onclick="showInput()">
+                <script>
+                  function showInput() {
+                    let obj={};
+                    obj.FirstName= document.getElementById("FirstName").value;
+                    obj.Contact=  document.getElementById("Contact").value;
+                    window.setCustomFields(obj);
+                  console.log("obj.. 123",obj);
+                  }
+                </script>
+          
           </li>
         </ul>
       </div>
