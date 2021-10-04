@@ -56,22 +56,19 @@ class PushlyFirebaseListener {
       } else if (!message.data.hasOwnProperty("data")) {
         var obj = JSON.parse(message.data.notification);
       }
-      let message_body = obj.body ? decodeURI(obj.body) : "";
-      console.log("message_body", message_body);
-      const title = obj.title;
+      obj.body = obj.body ? decodeURI(obj.body) : "";
+      const title = obj.title ? decodeURI(obj.title) : "";
       const options = {
-        body: message_body,
+        body: obj.body,
         icon: obj.icon,
         image: obj.image,
       };
-      console.log("options", options);
       if (
         message.data.action_button &&
         JSON.parse(message.data.action_button).action
       ) {
         options["actions"] = JSON.parse(message.data.action_button);
       }
-      console.log("options", options);
       event.waitUntil(self.registration.showNotification(title, options));
     });
 
