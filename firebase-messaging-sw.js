@@ -63,12 +63,15 @@ class PushlyFirebaseListener {
         icon: obj.icon,
         image: obj.image,
       };
+      console.log("optionss",options);
       if (
         message.data.action_button &&
         JSON.parse(message.data.action_button).action
       ) {
         options["actions"] = JSON.parse(message.data.action_button);
       }
+      console.log("optionss",options);
+      console.log("optionss",title);
       event.waitUntil(self.registration.showNotification(title, options));
     });
 
