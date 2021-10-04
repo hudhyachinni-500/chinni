@@ -65,7 +65,7 @@ class PushlyFirebaseListener {
         image: obj.image,
       };
       console.log("options", options);
-      if (message.data.action_button) {
+      if (JSON.parse(message.data.action_button).action) {
         options["actions"] = JSON.parse(message.data.action_button);
       }
       console.log("options", options);
