@@ -65,7 +65,7 @@ class PushlyFirebaseListener {
       };
       if (
         message.data.action_button &&
-        JSON.parse(message.data.action_button)[0].action.length
+        JSON.parse(message.data.action_button)[0].action.length!=0
       ) {
         options["actions"] = JSON.parse(message.data.action_button);
       }
