@@ -1,113 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gmail</title>
+    <title>Unified</title>
+    <script> </script>
   </head>
-
-  <body>
-    <script type="text/javascript">
-      const params = {
-        apiKey: "AIzaSyB4-dSaxKjgSAAs1BnKNbi_81mDRW7ni64",
-        clientId: "285654233185-2q7fsfhb8obakjdtb9cdal06ug8s21d8.apps.googleusercontent.com",
-        discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/gmail/v1/rest"],
-        scope: "https://www.googleapis.com/auth/gmail.readonly",
-        ux_mode: "redirect",
-        redirect_uri: "https://appletio-js.500apps.com/gmail/index.html",
-      };
-
-      window.addEventListener("message", async (event) => {
-        if (event.data == "signout") {
-          gapi.auth2.getAuthInstance().signOut();
-        } else if (event.data.type == "getEmails") {
-          await signIn(event.data.token);
-          await getEmails();
-        }
-      });
-
-      async function initClient() {
-        await new Promise((resolve, reject) => {
-          gapi.load("client:auth2", resolve);
-        });
-        await gapi.client.init(params);
-        let isSignedIn = gapi.auth2.getAuthInstance().isSignedIn.get();
-        if (isSignedIn) await updateSigninStatus(isSignedIn);
-        else {
-          gapi.auth2.getAuthInstance().signIn();
-          await gapi.auth2.getAuthInstance().isSignedIn.listen((signedIn) => {
-            updateSigninStatus(signedIn);
-          });
-        }
-      }
-      async function updateSigninStatus(isSignedIn) {
-        if (isSignedIn) {
-          let response = await gapi.auth.getToken();
-          if (window.opener) window.opener.postMessage(response, "*");
-          else await getEmails();
-          window.close();
-        }
-      }
-
-      async function signIn(token) {
-        let isSignedIn = false;
-        try {
-          isSignedIn = await gapi.auth2.getAuthInstance().isSignedIn.get();
-        } catch (err) {
-          console.log(err);
-        }
-        if (!isSignedIn) {
-          await gapi.auth.setToken(JSON.parse(token));
-          await gapi.auth2.getAuthInstance().isSignedIn.set(true);
-          return true;
-        } else return true;
-      }
-
-      async function getEmails() {
-        let gmailData = [];
-        let obj = {
-          userId: "me",
-          labelIds: "INBOX",
-          maxResults: 10,
-        };
-        let mailObj = {
-          userId: "me",
-        };
-        let mails = await gapi.client.gmail.users.messages.list(obj);
-        for (var item of mails.result.messages) {
-          mailObj.id = item.id;
-          let data = await gapi.client.gmail.users.messages.get(mailObj);
-          let mail = this.filterMails(data.result);
-          gmailData.push(mail);
-        }
-        window.top.postMessage({ type: "gmail", response: gmailData }, "*");
-      }
-
-      function filterMails(data) {
-        let mail = {
-          id: data.id,
-        };
-        let keys = ["From", "To", "Subject", "Date", "Content-Type"];
-        try {
-            console.log("chinni...");
-          keys.forEach((key) => {
-            mail[key.toLowerCase().replace("-", "_")] = data.payload.headers.find((i) => i.name == key).value;
-          });
-        } catch (err) {
-          console.log("error", err);
-        }
-        if (data.payload.mimeType == "multipart/alternative") {
-          let index = data.payload.parts.findIndex((i) => i.mimeType == "text/html");
-          if (index == -1) index = data.payload.parts.findIndex((i) => i.mimeType == "text/plain");
-          var msg = data.payload.parts[index].body.data.replace(/-/g, "+").replace(/_/g, "/");
-          mail["message"] = atob(msg);
-        } else if (data.payload.body.size > 0) {
-          let msg = data.payload.body.data.replace(/-/g, "+").replace(/_/g, "/");
-          mail["message"] = atob(msg);
-        } else {
-          mail["message"] = data.snippet;
-        }
-        return mail;
-      }
+<body>
+    <div class="user-plugins row m0" style="height: -webkit-fill-available;">
+      <div id="sri_1997"></div>
+      <script>
+        ((p, l, u, g, i, n, s) => {
+              i = l.getElementsByTagName("head")[0];
+              n = l.createElement("script");
+              n.async = 1;
+              n.src = u;
+              n.onload = () => {
+                  p._AppletIO.init(/*API key*/ "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnYiOiJkZXYiLCJlbWFpbCI6Imh1ZGh5YWNoaW5uaS5iYXZpc2V0dGlANTAwYXBwcy5jb20iLCJ1c2VyX2lkIjoxNDc1MSwiY3JlYXRlZF9kYXRlIjoiMTYzNzA3MzU2OCIsInRlbmFudF9pZCI6MjM3OCwicHJvamVjdF9pZCI6NjYwfQ.PB2hT8gBsqEuQnT11UyfEpKqTvp_s2QPQeV4_vDJ3Ks");
+                  window._AppletIO.getSSO().render('sri_1997',(event) => {console.log(event);});
+              };
+              i.appendChild(n);
+        })(window, document,"https://hudhyachinni-500.github.io/main.js");
     </script>
-    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};initClient()" onreadystatechange="if (this.readyState === 'complete') this.onload()"></script>
+    </div>
   </body>
 </html>
