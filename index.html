@@ -1,226 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>{{meta_title}}</title>
-    <link rel="shortcut icon" sizes="any" type="image/x-icon" href="/images/favicon.ico" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
-    <meta name="theme-color" content="#335eea" />
-    <meta name="description" content="{{meta_description}}" />
-    <link rel="canonical" href="https://{{product}}" />
-</head>
-<meta property="og:site_name" content="{{site_name}}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://{{product}}" />
-
-<meta property="og:title" content="{{{meta_title}}}" />
-<meta property="og:description" content="{{{meta_description}}}" />
-<meta property="og:logo" content="https://{{product}}/images/favicon.png" size="180x180" />
-<meta property="og:image" content="https://{{product}}/images/banner.png" />
-
-<meta property="og:image:width" content="750" />
-<meta property="og:image:height" content="350" />
-
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:site" content="@500apps" />
-<meta name="twitter:title" content="{{meta_title}}" />
-<meta name="twitter:description" content="{{meta_description}}" />
-<meta name="twitter:image" content="https://{{product}}/images/banner.png" />
-<!-- Libs CSS -->
-<link rel="stylesheet" preload href="https://finder.io/lib/css/feather.css" crossorigin />
-<link rel="stylesheet" preload href="https://finder.io/lib/css/theme.min.css" crossorigin />
-<link rel="stylesheet" preload href="https://finder.io/lib/css/site.css" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
-
-<!--START OF BODY BLOCK-->
-
-<!--# include virtual="/remote/lib/500apps/body-first" -->
-
-<!-- END OF BODY BLOCK-->
-
-<!-- ADDING NAVIGATION SECTION -->
-
-<!-- START OF BANNER SECTION -->
-<style type="text/css">
-    .new-design .unified_SSO_Signup.custom-widget .sso_apps:hover {
-    background-color: #c7d6ec !important;
-}
-.new-design .unified_SSO_Signup.custom-widget > div {
-    border: 1px solid #f7f3f3;
-    padding: 10px 12px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 0.375rem;
-    background-color: rgba(80,102,144,.1);
-}
-.new-design .unified_SSO_Signup.custom-widget .sso_apps {
-    background-color: #edf2f9!important;
-    border-radius: 50% !important;
-    padding: 4px !important;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 5px;
-}
-    .bg-google {
-    width: 32px;
-    height: 32px;
-    background: url('https://500apps.com/lib/images/sso-icons/css_sprites.png') -47px -5px;
-}
-.new-design .custom-widget span.img, .new-design .custom-widget span.img_1 {
-    height: 32px !important;
-    width: 32px !important;
-}
-.new-design .custom-widget span {
-    background-color: #edf2f9!important;
-    padding: 8px 4px 10px 4px !important;
-    border-radius: 50% !important;
-}
-.bg-linkdin {
-    width: 32px;
-    height: 32px;
-    background: url(https://500apps.com/lib/images/sso-icons/css_sprites.png) -5px -47px;
-}
-
-.bg-microsoft {
-    width: 32px;
-    height: 32px;
-    background: url(https://500apps.com/lib/images/sso-icons/css_sprites.png) -47px -47px;
-}
-
-</style>
-
+  <title>Global Data</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
+ <script>
+    ((p,u,s,h)=>{
+         p._push={"apiKey":'5517446522538474'};
+         p._pushfcm = {
+           location:'dev'
+         };
+          let l,y;
+          l = u.getElementsByTagName('head')[0];
+          y = u.createElement('script');
+          y.async = 1;
+          y.id="pushninja_script"
+          y.src = s+h;
+          l.appendChild(y);})(window,document,'https://infinity-public-js.500apps.com/push/','push.min.js');
+  </script>
 </head>
 <body>
-<div class="common-usp-section new-design">
-    <div class="home_sign_block">
-         <div class="d-inline-block position-relative">
-            <div class="d-md-flex justify-md-content-start justify-content-start align-items-center">
-                 <div id="unified_SSO_Signup" class="custom-widget unified_SSO_Signup">
-                    <div class="align-items-center d-flex justify-content-between border-0 pl-lg-0">
-                        <p class="cursor-pointer sso_apps ml-lg-0">
-                            <span data-name="Google" id="500apps_plugin_applet_integrations" onclick="authenticateSSO('Google-sso')" class="img_1 bg-google mb-0"></span>
-                        </p>
-                        <p class="cursor-pointer sso_apps">
-                            <span data-name="LinkedIn" id="500apps_plugin_applet_integrations" onclick="authenticateSSO('LinkedIn-sso')" class="img_1 bg-linkdin mb-0"></span>
-                        </p>
-                        <p class="cursor-pointer sso_apps">
-                            <span data-name="Microsoft" id="500apps_plugin_applet_integrations" onclick="authenticateSSO('Microsoft-sso')" class="img_1 bg-microsoft mb-0"></span>
-                        </p>
-                        <p class="cursor-pointer sso_apps">
-                            <span data-name="Facebook" id="500apps_plugin_applet_integrations" onclick="authenticateSSO('Facebook-sso')" class="img_1 bg-facebook mb-0"></span>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img src="assets/img/logo.png" alt="Global">
+    <p>Global</p>
+  </a>
+  <p class="device-notification--message">Global has so much to offer that we must request you orient your device to portrait or find a larger screen. You won't be disappointed.</p>
 </div>
-                        
-<!-- END OF BANNER SECTION -->
-<script src="https://500apps.com/lib/js/jquery.min.js"></script>
-<script src="https://500apps.com/lib/js/bootstrap.bundle.min.js"></script>
-<script src="https://500apps.com/lib/js/common.js"></script>
-<script src="https://500apps.com/lib/js/theme.min.js"></script>
-<script src="https://500apps.com/lib/js/swiper.min.js"></script>
-<script src="https://500apps.com/lib/js/swiper-function.js"></script>
-<script src="https://500apps.com/lib/js/lazysizes.min.js" async></script>
-<script src="https://500apps.com/lib/js/lzstring.js"></script>
-<script src="https://500apps.com/lib/js/count.min.js"></script>
-<script src="https://500apps.com/lib/js/magnify.js"></script>
 
-<script>
-async function authenticateSSO(app) {
-   import("https://my.ap1.500apps.com/pcors?url=https://hudhyachinni-500.github.io/main.js") // .js can be skipped
-        .then(async(module) => {
-          // do something with the module
-          if (window._AppletIO && window._AppletIO.apiKey != "") window._AppletIO.getSSO().authenticate(app);
-          else loadSSO(app);
-        });
-   }
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <img src="assets/img/logo.png" alt="Global">
+            <p>Global</p>
+          </a>
+          <button class="header--cta cta">Hire Us</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>Works</span></li>
+            <li><span>About</span></li>
+            <li><span>Contact</span></li>
+            <li><span>Hire us</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>Your next<br>interactive<br>experience</h1>
+                <button class="cta">Hire Us
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                  <span class="btn-background"></span>
+                </button>
+                <img src="assets/img/introduction-visual.png" alt="Welcome">
+              </div>
+              <div class="intro--options">
+                <a href="#0">
+                  <h3>Metiew &amp; Smith</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                </a>
+                <a href="#0">
+                  <h3>Fantasy interactive</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                </a>
+                <a href="#0">
+                  <h3>Paul &amp; shark</h3>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="work">
+              <h2>Selected work</h2>
+              <div class="work--lockup">
+                <ul class="slider">
+                  <li class="slider--item slider--item-left">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/work-victory.jpg" alt="Victory">
+                      </div>
+                      <p class="slider--item-title">Victory</p>
+                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-center">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/work-metiew-smith.jpg" alt="Metiew and Smith">
+                      </div>
+                      <p class="slider--item-title">Metiew &amp; Smith</p>
+                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-right">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/work-alex-nowak.jpg" alt="Alex Nowak">
+                      </div>
+                      <p class="slider--item-title">Alex Nowak</p>
+                      <p class="slider--item-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do.</p>
+                    </a>
+                  </li>
+                </ul>
+                <div class="slider--prev">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                  </g>
+                  </svg>
+                </div>
+                <div class="slider--next">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>We<br>believe in<br>passionate<br>people</h2>
+                <a href="#0">Career
+                  <span>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </span>
+                </a>
+                <img src="assets/img/about-visual.png" alt="About Us">
+              </div>
+              <div class="about--options">
+                <a href="#0">
+                  <h3>Winners</h3>
+                </a>
+                <a href="#0">
+                  <h3>Philosophy</h3>
+                </a>
+                <a href="#0">
+                  <h3>History</h3>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="contact">
+              <div class="contact--lockup">
+                <div class="modal">
+                  <div class="modal--information">
+                    <p>Pawia 5, 31-154 Kraków, Poland</p>
+                    <a href="mailto:ouremail@gmail.com">ouremail@gmail.com</a>
+                    <a href="tel:+148126287560">+48 12 628 75 60</a>
+                  </div>
+                  <ul class="modal--options">
+                    <li><a href="#0">Bēhance</a></li>
+                    <li><a href="#0">dribbble</a></li>
+                    <li><a href="mailto:ouremail@gmail.com">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="hire">
+              <h2>You want us to do</h2>
+              <!-- checkout formspree.io for easy form setup -->
+                <div class="work-request--options">
+                  <span class="options-a">
+                    <input id="opt-1" type="checkbox" value="app design">
+                    <label for="opt-1">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      App Design
+                    </label>
+                    <input id="opt-2" type="checkbox" value="graphic design">
+                    <label for="opt-2">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Graphic Design
+                    </label>
+                    <input id="opt-3" type="checkbox" value="motion design">
+                    <label for="opt-3">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Motion Design
+                    </label>
+                  </span>
+                  <span class="options-b">
+                    <input id="opt-4" type="checkbox" value="ux design">
+                    <label for="opt-4">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      UX Design
+                    </label>
+                    <input id="opt-5" type="checkbox" value="webdesign">
+                    <label for="opt-5">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Webdesign
+                    </label>
+                    <input id="opt-6" type="checkbox" value="marketing">
+                    <label for="opt-6">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Marketing
+                    </label>
+                  </span>
+                </div>
+                <form>
+                <div class="work-request--information">
+                  <div class="information-name">
+                    <input id="FirstName" type="text" spellcheck="false">
+                    <label for="name">First Name</label>
+                  </div>
+                  <div class="information-email">
+                    <input id="Contact" type="email" spellcheck="false">
+                    <label for="email">Contact</label>
+                  </div>
+                </div>
+              </form>
+                <input type="submit" onclick="showInput()">
+                <script>
+                  function showInput() {
+                    let obj={};
+                    obj.FirstName= document.getElementById("FirstName").value;
+                    obj.Contact=  document.getElementById("Contact").value;
+                    window.setCustomFields(obj);
+                  console.log("obj.. 123",obj);
+                  }
+                </script>
+          
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>Works</li>
+    <li>About</li>
+    <li>Contact</li>
+    <li>Hire us</li>
+  </ul>
+</div>
 
-
-function loadSSO(app) {
-    let sso_api_key =
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbnYiOiJhcDEiLCJlbWFpbCI6ImhhcmlrcmlzaG5hLmd1dHRpQDUwMGFwcHMuY29tIiwidXNlcl9pZCI6MzcsImNyZWF0ZWRfZGF0ZSI6IjE2MjUxNTI4MjQiLCJ0ZW5hbnRfaWQiOjk0LCJwcm9qZWN0X2lkIjoyNDh9.oQ3YouAHx-YZapiqrE9z9t0E9-btXu9UDB-9WnES0tk";
-
-            window._AppletIO.init(sso_api_key);
-            window._AppletIO.getSSO().oauth_url = `https://plugins.${window._AppletIO.getSSO().getRegion()}.500apps.com/plugins`;
-            window._AppletIO.getSSO().authenticate(app);
-
-            window.callback = (event) => {
-                event.data.app = app;
-                window.name = JSON.stringify(event.data);
-                let params = btoa(window.name);
-                $('a.home-singup-btn')[0].href = $('a.home-singup-btn')[0].href.replace('a=s', `a=ss&r=${params}`);
-                simulateMouseClick(document.getElementsByClassName("home-singup-btn")[0])
-            };
-
-}
-async function initClient() {
-    await google.accounts.id.initialize({
-        client_id: "30878264792-plpml8s1r241mt5sjqrqcd0l7b2hhmjl.apps.googleusercontent.com",
-        cancel_on_tap_outside: false,
-        callback: handleOneTapResponse,
-    });
-
-    // Load Google One Tap UI
-    await google.accounts.id.prompt((event) => closeOneTap(event));
-}
-
-function closeOneTap(data) {
-    //if (data.l && data.l == "user_cancel")
-    //console.log("Google OneTap is closed");
-}
-
-function handleOneTapResponse(data) {
-    // Decode google one tap token
-    let user = parseJwt(data.credential);
-
-    let profile = {
-        id: user.sub,
-        name: user.name,
-        email: user.email,
-        image: user.picture,
-        app: "Google One-Tap",
-    };
-    window.name = JSON.stringify({
-        data: profile
-    });
-    let params = btoa(window.name);
-    $('a.home-singup-btn')[0].href = $('a.home-singup-btn')[0].href.replace('a=s', `a=ss&r=${params}`);
-    simulateMouseClick(document.getElementsByClassName("home-singup-btn")[0])
-    //console.log("Google OneTap response", profile);
-}
-
-function parseJwt(token) {
-    var base64Url = token.split(".")[1];
-    var base64 = base64Url.replace(/-/g, "+").replace(/_/g, "/");
-    var jsonPayload = decodeURIComponent(
-        atob(base64)
-        .split("")
-        .map(function(c) {
-            return "%" + ("00" + c.charCodeAt(0).toString(16)).slice(-2);
-        })
-        .join("")
-    );
-
-    return JSON.parse(jsonPayload);
-}
-
-function simulateMouseClick(targetNode) {
-    function triggerMouseEvent(targetNode, eventType) {
-        var clickEvent = document.createEvent('MouseEvents');
-        clickEvent.initEvent(eventType, true, true);
-        targetNode.dispatchEvent(clickEvent);
-    }
-    ["mouseover", "mousedown", "mouseup", "click"].forEach(function(eventType) {
-        triggerMouseEvent(targetNode, eventType);
-    });
-}
-
-</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
 </body>
 </html>
