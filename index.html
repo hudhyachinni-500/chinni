@@ -9,20 +9,24 @@
   <meta name="keywords" content="global, template, html, sass, jquery">
   <meta name="author" content="Bucky Maler">
   <link rel="stylesheet" href="assets/css/main.css">
- <script>
-    ((p,u,s,h)=>{
-         p._push={"apiKey":'5517446522538474'};
-         p._pushfcm = {
-           location:'dev'
-         };
-          let l,y;
-          l = u.getElementsByTagName('head')[0];
-          y = u.createElement('script');
-          y.async = 1;
-          y.id="pushninja_script"
-          y.src = s+h;
-          l.appendChild(y);})(window,document,'https://hudhyachinni-500.github.io/','push.min.js');
-  </script>
+    <script>
+      setTimeout(function(){ 
+        (function(n, j, c, h, a, t) {
+      d= j.createElement('div');
+      d.id= 'chatbot';
+      t = j.getElementsByTagName('head')[0];
+      a = j.createElement('script');
+      a.async = 1;
+      a.id= 'ninjachat';
+      a.src = c + h;
+      a.onload = function(){
+          n._NC.init('2591967915209117','1087','dev')
+    };
+    j.lastChild.append(d);
+    t.appendChild(a);
+    })(window, document, 'https://widgets.500apps.com/dev/ninjachat/', 'ninjachat.js');
+    },2000);
+    </script>
 </head>
 <body>
 
