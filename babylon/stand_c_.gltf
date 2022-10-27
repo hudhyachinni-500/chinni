@@ -1,0 +1,66 @@
+{
+  "asset": { "version": "2.0", "generator": "babylon.js glTF exporter for 3dsmax 2018 v20200813.4" },
+  "extensionsUsed": ["KHR_materials_unlit"],
+  "scene": 0,
+  "scenes": [{ "nodes": [0, 1, 2] }],
+  "nodes": [
+    { "mesh": 0, "translation": [-0.31588, 0.0, 0.216609284], "name": "Stand_C" },
+    { "mesh": 1, "translation": [-0.31588, 0.0, 0.216609284], "name": "Branding_Stand_C_Graphic" },
+    { "name": "Default light" }
+  ],
+  "meshes": [
+    { "primitives": [{ "attributes": { "POSITION": 1, "NORMAL": 2, "TEXCOORD_0": 3, "TEXCOORD_1": 4 }, "indices": 0, "material": 0 }], "name": "Stand_C" },
+    { "primitives": [{ "attributes": { "POSITION": 6, "NORMAL": 7, "TEXCOORD_0": 8, "TEXCOORD_1": 9 }, "indices": 5, "material": 1 }], "name": "Branding_Stand_C_Graphic" }
+  ],
+  "accessors": [
+    { "bufferView": 0, "componentType": 5123, "count": 4650, "type": "SCALAR", "name": "accessorIndices" },
+    { "bufferView": 1, "componentType": 5126, "count": 4650, "max": [5.247317, 3.58790469, 4.51942158], "min": [-5.22920656, -0.0442813858, -4.553514], "type": "VEC3", "name": "accessorPositions" },
+    { "bufferView": 1, "byteOffset": 55800, "componentType": 5126, "count": 4650, "type": "VEC3", "name": "accessorNormals" },
+    { "bufferView": 2, "componentType": 5126, "count": 4650, "type": "VEC2", "name": "accessorUVs" },
+    { "bufferView": 2, "byteOffset": 37200, "componentType": 5126, "count": 4650, "type": "VEC2", "name": "accessorUV2s" },
+    { "bufferView": 0, "byteOffset": 9300, "componentType": 5123, "count": 84, "type": "SCALAR", "name": "accessorIndices" },
+    {
+      "bufferView": 1,
+      "byteOffset": 111600,
+      "componentType": 5126,
+      "count": 84,
+      "max": [2.986772, 3.39058375, 3.5420866],
+      "min": [-2.905666, 0.09999965, -3.410851],
+      "type": "VEC3",
+      "name": "accessorPositions"
+    },
+    { "bufferView": 1, "byteOffset": 112608, "componentType": 5126, "count": 84, "type": "VEC3", "name": "accessorNormals" },
+    { "bufferView": 2, "byteOffset": 74400, "componentType": 5126, "count": 84, "type": "VEC2", "name": "accessorUVs" },
+    { "bufferView": 2, "byteOffset": 75072, "componentType": 5126, "count": 84, "type": "VEC2", "name": "accessorUV2s" }
+  ],
+  "bufferViews": [
+    { "buffer": 0, "byteLength": 9468, "name": "bufferViewScalar" },
+    { "buffer": 0, "byteOffset": 9468, "byteLength": 113616, "byteStride": 12, "name": "bufferViewFloatVec3" },
+    { "buffer": 0, "byteOffset": 123084, "byteLength": 75744, "byteStride": 8, "name": "bufferViewFloatVec2" }
+  ],
+  "buffers": [{ "uri": "stand_c_.bin", "byteLength": 198828 }],
+  "materials": [
+    {
+      "pbrMetallicRoughness": { "baseColorTexture": { "index": 0 }, "metallicFactor": 0.0, "roughnessFactor": 0.450053632 },
+      "emissiveTexture": { "index": 0 },
+      "emissiveFactor": [1.0, 1.0, 1.0],
+      "doubleSided": true,
+      "name": "stand_c_",
+      "extensions": { "KHR_materials_unlit": {} }
+    },
+    {
+      "pbrMetallicRoughness": { "baseColorTexture": { "index": 1 }, "metallicFactor": 0.0, "roughnessFactor": 0.450053632 },
+      "emissiveTexture": { "index": 1 },
+      "emissiveFactor": [1.0, 1.0, 1.0],
+      "doubleSided": true,
+      "name": "Branding",
+      "extensions": { "KHR_materials_unlit": {} }
+    }
+  ],
+  "textures": [
+    { "sampler": 0, "source": 0, "name": "stand_c_vray_complete_map.jpg" },
+    { "sampler": 0, "source": 1, "name": "branding_stand_c_graphic_vray_complete_map_b_.jpg" }
+  ],
+  "images": [{ "uri": "./stand_c_vray_complete_map.jpg" }, { "uri": "./branding_stand_c_graphic_vray_complete_map_b_.jpg" }],
+  "samplers": [{ "magFilter": 9729, "minFilter": 9987 }]
+}
